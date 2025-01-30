@@ -4,10 +4,11 @@
 
 	<meta charset="UTF-8" />
 
-        <title>PayNow CC</title>
+        <title>PayNow Payments</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="paynow.css" rel="stylesheet" type="text/css" />
 
     </head>
     <body>
@@ -26,9 +27,20 @@
 		</ul>
             </div>
 
-            <div id="your">
-                <p>PayNow is the easier, safer way to pay and get paid online.<p>
+            <div id="login-fields">
+
+                <h2>Login Form</h2>
+
+                <label for="UserName">User Name</label>
+                <input type="text" value="" id="UserName" />
+
+                <label for="UserPassword">Password</label>
+                <input type="password" value="" id="UserPassword" />
+
+                <input type="button" value="LogIn" id="LogIn" />
             </div>
+            
+
 
             <div id="don1">
                 <h2>PayNow is a global community working together to make financial services secure, convenient & affordable</h2>
@@ -38,7 +50,7 @@
 
             <div id="don2">
                 <h2>PayNow for your Online Shopping</h2>
-                <p> You can even send money to a friend</p>
+                <p>You can even send money to a friend</p>
                 <p><a href="./paynow.html" class="button">PayNow</a></p>
             </div>
 
@@ -64,12 +76,11 @@
                 <p>You can also send money to your favorite charity with PayNow</p>
             </div>
 
-            
             <div id="about" class="why">
                 <p>About us text</p>
                 <p>Photo credit:<br />
-                    <a href="https://flickr.com/photos/webiliz/7307659362/">Credit Cards</a><br />
-                    <a href="https://flickr.com/photos/lendingmemo_com/46462475302">Credit Card Fraud</a>.</p>
+                    <a href="https://flickr.com/photos/floridamemory/3659411397/">Storm surge</a><br />
+                    <a href="https://flickr.com/photos/scguard/44918321411/">Flood</a>.</p>
             </div>
 
             <div id="sitelinks" class="why">
@@ -86,7 +97,12 @@
                 <p>info@example.com</p>
             </div>
 
-
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous">
+        </script>
+        <script src="paynow.js"></script>
+
     </body>
 </html>
+
