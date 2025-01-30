@@ -27,19 +27,21 @@
 		</ul>
             </div>
 
-            <div id="login-fields">
-
-                <h2>Login Form</h2>
-
-                <label for="UserName">User Name</label>
-                <input type="text" value="" id="UserName" />
-
-                <label for="UserPassword">Password</label>
-                <input type="password" value="" id="UserPassword" />
-
-                <input type="button" value="LogIn" id="LogIn" />
-            </div>
-            
+            <div class="login">
+                 <h2>Login</h2>
+                 <form id="loginFields">
+                     <div class="input-credentials">
+                         <label for="username">User-Name</label>
+                         <input type="text" id="username" required>
+                     </div>
+                     <div class="input-credentials">
+                         <label for="password">Password</label>
+                         <input type="password" id="password" required>
+                     </div>
+                     <button type="submit">LogIn</button>
+                     <p id="error-message"></p>
+                 </form>
+             </div> 
 
 
             <div id="don1">
@@ -101,6 +103,7 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous">
         </script>
+	<script src="login.js"></script> 
         <script src="paynow.js"></script>
 
     </body>
