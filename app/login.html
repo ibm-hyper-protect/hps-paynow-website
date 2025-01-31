@@ -8,6 +8,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="login.css" rel="stylesheet" type="text/css" />
         <link href="paynow.css" rel="stylesheet" type="text/css" />
 
     </head>
@@ -24,25 +25,52 @@
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./paynow.html">PayNow</a></li>
                     <li><a href="./login.html">Login</a></li>
-		</ul>
+                </ul>
             </div>
 
-            <div class="login">
-                 <h2>Login</h2>
-                 <form id="loginFields">
-                     <div class="input-credentials">
-                         <label for="username">User-Name</label>
-                         <input type="text" id="username" required>
-                     </div>
-                     <div class="input-credentials">
-                         <label for="password">Password</label>
-                         <input type="password" id="password" required>
-                     </div>
-                     <button type="submit">LogIn</button>
-                     <p id="error-message"></p>
-                 </form>
-             </div> 
+	    <div class="login-container">
+                <h2>Login Page</h2>
+                <form id="login-form" action="javascript:void(0);">
+                    <div class="input-group">
+                        <label for="username">User Name:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" id="submit-btn" onclick="getCreds()">LogIn</button>
+                </form>
+            </div>
 
+            <script>
+                    function getCreds() {
+                                         fetch('http://127.0.0.1:8200/v1/database/creds/readonly', {
+                                           headers: {
+                                               "X-Vault-Token": "root",
+                                           },
+                                         })
+                                           .then(response => response.json())
+                                           .then(response => console.log(response))
+                                           .catch(err => console.error(err));
+                                           document.getElementById("login-form").addEventListener("submit", function(event) {
+                                            event.preventDefault();
+
+                                            const validusername = "admin";
+                                            const validpassword = "admin";
+
+                                            const username = document.getElementById('username').value;
+                                            const password = document.getElementById('password').value;
+                                            if (username == validusername && password == validpassword){
+                                                alert("login successful");
+
+                                                window.location.href = "secrets.html";      //redirect to home page
+                                            }else{
+                                                alert("Invalid username or password. Please try again.");
+                                            }
+                                            });
+                                        }
+            </script>
 
             <div id="don1">
                 <h2>PayNow is a global community working together to make financial services secure, convenient & affordable</h2>
@@ -103,7 +131,7 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous">
         </script>
-	<script src="login.js"></script> 
+	<script src="login.js"></script>
         <script src="paynow.js"></script>
 
     </body>
