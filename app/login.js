@@ -1,7 +1,7 @@
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
-    const validusername = "admin";
+    const validusername = "pradeep";
     const validpassword = "admin";
 
     const username = document.getElementById('UserName').value;
